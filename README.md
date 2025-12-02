@@ -192,27 +192,11 @@ When investigating Loki performance issues, follow this systematic approach:
 
 
 ## Dashboard Links
-
-- **Loki Reads Dashboard**: `/grafana/d/loki-reads`
-- **Loki Writers Dashboard**: `/grafana/d/loki-writes`  
-- **Loki Reads Resources**: `/grafana/d/loki-reads-resources`
-- **Loki Writers Resources**: `/grafana/d/loki-writes-resources`
-- **Loki Logs Dashboard**: `/grafana/d/loki-logs`
-- **Loki Chunks Dashboard**: `/grafana/d/loki-chunks`
-- **Loki Compactor Dashboard**: `/grafana/d/loki-compactor`
-
-## Quick Reference Commands
-
-```bash
-# Check current query performance
-histogram_quantile(0.95, rate(loki_request_duration_seconds_bucket[5m]))
-
-# Check ingestion rate
-sum(rate(loki_distributor_received_bytes_total[5m]))
-
-# Check active streams
-loki_ingester_memory_streams
-
-# Check errors
-sum(rate(loki_request_failures_total[5m])) by (route, status_code)
-```
+- **Loki Dashboards**: [observability-loki](https://grafana.apps.os-restricted.finods.com/dashboards/f/observability-loki/?orgId=1)
+    - Loki Reads Dashboard
+    - Loki Writers Dashboard 
+    - Loki Reads Resources
+    - Loki Writers Resources
+    - Loki Logs Dashboard
+    - Loki Chunks Dashboard
+    - Loki Compactor Dashboard
